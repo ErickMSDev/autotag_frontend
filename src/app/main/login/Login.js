@@ -57,7 +57,7 @@ function Login() {
                 <div className="border-l-1 mr-4 w-1 h-40" />
                 <div>
                   <Typography className="text-24 font-semibold logo-text" color="inherit">
-                    AutoTag
+                    ViaSimple
                   </Typography>
                   <Typography
                     className="text-16 tracking-widest -mt-8 font-700"
@@ -126,7 +126,7 @@ function Login() {
             >
               <Typography variant="h3" color="inherit" className="font-semibold leading-tight">
                 Bienvenid@ a
-                <br /> AutoTag!
+                <br /> ViaSimple!
               </Typography>
             </motion.div>
 
