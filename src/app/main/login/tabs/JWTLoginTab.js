@@ -40,10 +40,10 @@ function JWTLoginTab(props) {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  useEffect(() => {
-    setValue('email', '', { shouldDirty: true, shouldValidate: true });
-    setValue('password', '', { shouldDirty: true, shouldValidate: true });
-  }, [reset, setValue, trigger]);
+  // useEffect(() => {
+  //   setValue('email', '', { shouldDirty: true, shouldValidate: true });
+  //   setValue('password', '', { shouldDirty: true, shouldValidate: true });
+  // }, [reset, setValue, trigger]);
 
   useEffect(() => {
     login.errors.forEach((error) => {
