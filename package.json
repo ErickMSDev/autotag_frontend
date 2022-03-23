@@ -100,8 +100,8 @@
         "util": "^0.12.4"
     },
     "scripts": {
-        "start": "craco start",
-        "build": "cross-env GENERATE_SOURCEMAP=false craco build",
+        "start": "cross-env REACT_APP_ENVIRONMENT='development' craco start",
+        "build": "cross-env GENERATE_SOURCEMAP=false REACT_APP_ENVIRONMENT='production' craco build",
         "test": "craco test --env=node",
         "eject": "craco eject",
         "build-docs": "babel-node --presets @babel/preset-env src/app/main/documentation/material-ui-components/build.js",

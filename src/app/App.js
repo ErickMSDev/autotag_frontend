@@ -15,7 +15,15 @@ import { Auth } from './auth';
 /**
  * Axios HTTP Request defaults
  */
-axios.defaults.baseURL = 'https://localhost:7223';
+
+const environment = process.env.REACT_APP_ENVIRONMENT;
+
+const apiUrl =
+  environment === 'production'
+    ? 'https://autotag-api-prod.azurewebsites.net'
+    : 'https://localhost:7223';
+
+axios.defaults.baseURL = apiUrl;
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 
