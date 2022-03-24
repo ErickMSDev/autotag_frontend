@@ -101,6 +101,7 @@
     },
     "scripts": {
         "start": "cross-env REACT_APP_ENVIRONMENT='development' craco start",
+        "start-prod": "cross-env REACT_APP_ENVIRONMENT='production' craco start",
         "build": "cross-env GENERATE_SOURCEMAP=false REACT_APP_ENVIRONMENT='production' craco build",
         "test": "craco test --env=node",
         "eject": "craco eject",

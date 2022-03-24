@@ -14,6 +14,7 @@ import { logoutUser } from 'app/auth/store/userSlice';
 function UserMenu(props) {
   const dispatch = useDispatch();
   const user = useSelector(({ auth }) => auth.user);
+  console.log({ user });
   const navigate = useNavigate();
 
   const [userMenu, setUserMenu] = useState(null);
@@ -37,10 +38,10 @@ function UserMenu(props) {
           <Typography component="span" className="font-semibold flex">
             {user.data.displayName}
           </Typography>
-          <Typography className="text-11 font-medium capitalize" color="textSecondary">
+          {/* <Typography className="text-11 font-medium capitalize" color="textSecondary">
             {user.role.toString()}
             {(!user.role || (Array.isArray(user.role) && user.role.length === 0)) && 'Guest'}
-          </Typography>
+          </Typography> */}
         </div>
 
         {user.data.photoURL ? (

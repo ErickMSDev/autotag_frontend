@@ -8,6 +8,7 @@ import PortalAccountConfig from 'app/main/portal-account/PortalAccountConfig';
 import FuseLoading from '@fuse/core/FuseLoading';
 import Error404Page from 'app/main/404/Error404Page';
 import LoginConfig from 'app/main/login/LoginConfig';
+import RegisterConfig from 'app/main/register/RegisterConfig';
 
 const routeConfigs = [
   ExampleConfig,
@@ -16,6 +17,7 @@ const routeConfigs = [
   PortalAccountsConfig,
   PortalAccountConfig,
   LoginConfig,
+  RegisterConfig,
 ];
 
 const routes = [
