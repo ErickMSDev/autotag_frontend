@@ -1,9 +1,9 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
 import Icon from '@mui/material/Icon';
 import InputAdornment from '@mui/material/InputAdornment';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { submitRegister } from 'app/auth/store/registerSlice';
@@ -36,6 +36,7 @@ const defaultValues = {
 function JWTRegisterTab(props) {
   const dispatch = useDispatch();
   const authRegister = useSelector(({ auth }) => auth.register);
+  const [isLoading, setIsLoading] = useState(false);
 
   const { control, formState, handleSubmit, reset, setError } = useForm({
     mode: 'onChange',
@@ -55,7 +56,8 @@ function JWTRegisterTab(props) {
   }, [authRegister.errors, setError]);
 
   function onSubmit(model) {
-    dispatch(submitRegister(model));
+    setIsLoading(true);
+    dispatch(submitRegister(model)).then(() => setIsLoading(false));
   }
 
   return (
@@ -191,7 +193,7 @@ function JWTRegisterTab(props) {
           )}
         />
 
-        <Button
+        <LoadingButton
           type="submit"
           variant="contained"
           color="primary"
@@ -199,9 +201,10 @@ function JWTRegisterTab(props) {
           aria-label="REGISTER"
           disabled={_.isEmpty(dirtyFields) || !isValid}
           value="legacy"
+          loading={isLoading}
         >
           Registrate
-        </Button>
+        </LoadingButton>
       </form>
     </div>
   );

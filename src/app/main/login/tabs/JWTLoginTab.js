@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import LoadingButton from '@mui/lab/LoadingButton';
 import Icon from '@mui/material/Icon';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -30,6 +30,8 @@ const defaultValues = {
 function JWTLoginTab(props) {
   const dispatch = useDispatch();
   const login = useSelector(({ auth }) => auth.login);
+  const [isLoading, setIsLoading] = useState(false);
+
   const { control, setValue, formState, handleSubmit, reset, trigger, setError } = useForm({
     mode: 'onChange',
     defaultValues,
@@ -55,7 +57,8 @@ function JWTLoginTab(props) {
   }, [login.errors, setError]);
 
   function onSubmit(model) {
-    dispatch(submitLogin(model));
+    setIsLoading(true);
+    dispatch(submitLogin(model)).then(() => setIsLoading(false));
   }
 
   return (
@@ -116,7 +119,7 @@ function JWTLoginTab(props) {
           )}
         />
 
-        <Button
+        <LoadingButton
           type="submit"
           variant="contained"
           color="primary"
@@ -124,9 +127,10 @@ function JWTLoginTab(props) {
           aria-label="LOG IN"
           disabled={_.isEmpty(dirtyFields) || !isValid}
           value="legacy"
+          loading={isLoading}
         >
           Ingresar
-        </Button>
+        </LoadingButton>
       </form>
     </div>
   );

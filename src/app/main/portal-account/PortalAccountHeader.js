@@ -22,12 +22,15 @@ function ProductHeader(props) {
   function handleSavePortalAccount() {
     dispatch(savePortalAccount(getValues())).then((action) => {
       const textMessage = action.payload.enabled
-        ? 'Cuenta guardada. Se comenzará a descargar la información.'
+        ? `Cuenta guardada.
+        Se comenzará a descargar la información.
+        Esto puede tomar hasta 15 minutos.
+        Te enviaremos un correo cuando el proceso esté listo.`
         : 'Cuenta guardada';
       dispatch(
         showMessage({
           message: textMessage,
-          // autoHideDuration: 20000,
+          autoHideDuration: 100000,
           anchorOrigin: {
             vertical: 'top',
             horizontal: 'center',

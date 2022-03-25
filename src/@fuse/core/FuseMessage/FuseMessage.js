@@ -65,7 +65,7 @@ function FuseMessage(props) {
             {variantIcon[options.variant] && (
               <Icon color="inherit">{variantIcon[options.variant]}</Icon>
             )}
-            <Typography className="mx-8">{options.message}</Typography>
+            <Typography className="mx-8 whitespace-pre-line">{options.message}</Typography>
           </div>
         }
         action={[
