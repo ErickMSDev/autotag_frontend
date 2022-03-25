@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import clsx from 'clsx';
 
 import { useDispatch, useSelector } from 'react-redux';
 import withRouter from '@fuse/core/withRouter';
@@ -216,12 +217,19 @@ function PortalAccountsTable(props) {
                       {n.password}
                     </TableCell>
 
-                    <TableCell className="p-4 md:p-16" component="th" scope="row" align="center">
-                      {n.enabled ? (
-                        <Icon className="text-green text-20">check_circle</Icon>
-                      ) : (
-                        <Icon className="text-red text-20">remove_circle</Icon>
-                      )}
+                    <TableCell className="p-4 md:p-16" component="th" scope="row">
+                      <div
+                        className={clsx(
+                          'inline text-12 font-semibold py-4 px-12 rounded-full truncate',
+                          ['disabled'].includes(n.statusCode) && 'bg-gray text-black',
+                          ['error', 'error_login'].includes(n.statusCode) &&
+                            'bg-red-700 text-white',
+                          ['processing'].includes(n.statusCode) && 'bg-orange text-black',
+                          ['active'].includes(n.statusCode) && 'bg-green-700 text-white'
+                        )}
+                      >
+                        {n.statusName}
+                      </div>
                     </TableCell>
                   </TableRow>
                 );

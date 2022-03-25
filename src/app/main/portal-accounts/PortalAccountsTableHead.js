@@ -47,9 +47,9 @@ const rows = [
   },
   {
     id: 'active',
-    align: 'center',
+    align: 'left',
     disablePadding: false,
-    label: 'Activo',
+    label: 'Estado',
     sort: true,
   },
 ];
