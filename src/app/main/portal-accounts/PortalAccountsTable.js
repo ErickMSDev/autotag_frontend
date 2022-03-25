@@ -1,7 +1,7 @@
 import FuseScrollbars from '@fuse/core/FuseScrollbars';
 import _ from '@lodash';
 import Checkbox from '@mui/material/Checkbox';
-import Icon from '@mui/material/Icon';
+import HideValue from 'app/shared-components/HideValue';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -214,7 +214,7 @@ function PortalAccountsTable(props) {
                     </TableCell>
 
                     <TableCell className="p-4 md:p-16" component="th" scope="row">
-                      {n.password}
+                      <HideValue>{n.password}</HideValue>
                     </TableCell>
 
                     <TableCell className="p-4 md:p-16" component="th" scope="row">
