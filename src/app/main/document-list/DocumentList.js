@@ -10,7 +10,7 @@ import { models } from 'powerbi-client';
 import FuseLoading from '@fuse/core/FuseLoading';
 import { useDispatch, useSelector } from 'react-redux';
 import withReducer from 'app/store/withReducer';
-import { getEmbedInfo } from '../store/dashboardSlice';
+import { getEmbedInfo } from '../store/documentListSlice';
 import reducer from '../store/index';
 
 const Root = styled(FusePageCarded)(({ theme }) => ({
@@ -31,9 +31,9 @@ const Root = styled(FusePageCarded)(({ theme }) => ({
   },
 }));
 
-function Dashboard() {
+function DocumentList() {
   const dispatch = useDispatch();
-  const { embedInfo } = useSelector((store) => store.main.dashboard);
+  const { embedInfo } = useSelector((store) => store.main.documentList);
 
   const [loading, setLoading] = useState(true);
   const [report, setReport] = useState(null);
@@ -76,7 +76,7 @@ function Dashboard() {
               delay={300}
               className="hidden sm:flex text-16 md:text-24 mx-12 font-semibold"
             >
-              Dashboard
+              Lista de documentos
             </Typography>
           </div>
         </div>
@@ -144,4 +144,4 @@ function Dashboard() {
   );
 }
 
-export default withReducer('main', reducer)(Dashboard);
+export default withReducer('main', reducer)(DocumentList);

@@ -3,6 +3,9 @@ import FuseUtils from '@fuse/utils';
 import ExampleConfig from 'app/main/example/ExampleConfig';
 import DashboardConfig from 'app/main/dashboard/DashboardConfig';
 import TransitsConfig from 'app/main/transits/TransitsConfig';
+import FreewayAnalysisConfig from 'app/main/freeway-analysis/FreewayAnalysisConfig';
+import VehicleAnalysisConfig from 'app/main/vehicle-analysis/VehicleAnalysisConfig';
+import DocumentListConfig from 'app/main/document-list/DocumentListConfig';
 import PortalAccountsConfig from 'app/main/portal-accounts/PortalAccountsConfig';
 import PortalAccountConfig from 'app/main/portal-account/PortalAccountConfig';
 import FuseLoading from '@fuse/core/FuseLoading';
@@ -14,6 +17,9 @@ const routeConfigs = [
   ExampleConfig,
   DashboardConfig,
   TransitsConfig,
+  FreewayAnalysisConfig,
+  VehicleAnalysisConfig,
+  DocumentListConfig,
   PortalAccountsConfig,
   PortalAccountConfig,
   LoginConfig,

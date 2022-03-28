@@ -113,19 +113,19 @@ function Transits() {
                 new Map([
                   [
                     'loaded',
-                    function () {
+                    () => {
                       console.log('Report loaded');
                     },
                   ],
                   [
                     'rendered',
-                    function () {
+                    () => {
                       console.log('Report rendered');
                     },
                   ],
                   [
                     'error',
-                    function (event) {
+                    (event) => {
                       console.error('Error powerbi');
                       console.log(event.detail);
                     },
