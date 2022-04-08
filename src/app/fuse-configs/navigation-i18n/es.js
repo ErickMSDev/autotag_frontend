@@ -5,7 +5,7 @@ const locale = {
   VEHICLE_ANALYSIS: 'Análisis de Vehículos',
   DOCUMENT_LIST: 'Lista de documentos',
   DASHBOARD: 'Dashboard',
-  PORTAL_ACCOUNTS: 'Cuentas de Portales',
+  PORTAL_ACCOUNTS: 'Credenciales Autopistas',
   LAST_MOVEMENTS: 'Últimos movimientos',
   TRANSITS: 'Transitos',
   IRREGULARITIES: 'Irregularidades - pronto!',

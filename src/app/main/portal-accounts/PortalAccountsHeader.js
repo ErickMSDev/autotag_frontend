@@ -33,7 +33,7 @@ function PortalAccountsHeader(props) {
           delay={300}
           className="hidden sm:flex text-16 md:text-24 mx-12 font-semibold"
         >
-          Cuentas de Portales
+          Credenciales Autopistas
         </Typography>
       </div>
 
