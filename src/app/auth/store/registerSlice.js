@@ -14,6 +14,21 @@ export const submitRegister =
         password,
         email,
       })
+      .then((resp) => {
+        return dispatch(registerSuccess());
+      })
+      .catch((errors) => {
+        return dispatch(registerError(errors));
+      });
+  };
+
+export const confirmEmail =
+  ({ token }) =>
+  async (dispatch) => {
+    return jwtService
+      .confirmEmail({
+        token,
+      })
       .then((user) => {
         dispatch(setUserData(user));
         return dispatch(registerSuccess());

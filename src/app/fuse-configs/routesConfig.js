@@ -12,6 +12,8 @@ import FuseLoading from '@fuse/core/FuseLoading';
 import Error404Page from 'app/main/404/Error404Page';
 import LoginConfig from 'app/main/login/LoginConfig';
 import RegisterConfig from 'app/main/register/RegisterConfig';
+import ConfirmEmailConfig from 'app/main/confirm-email/ConfirmEmailConfig';
+import MailConfirmConfig from 'app/main/mail-confirm/MailConfirmConfig';
 
 const routeConfigs = [
   ExampleConfig,
@@ -24,6 +26,8 @@ const routeConfigs = [
   PortalAccountConfig,
   LoginConfig,
   RegisterConfig,
+  ConfirmEmailConfig,
+  MailConfirmConfig,
 ];
 
 const routes = [

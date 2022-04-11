@@ -64,7 +64,7 @@ function ProductHeader(props) {
             <Icon className="text-20">
               {theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}
             </Icon>
-            <span className="hidden sm:flex mx-4 font-medium">Cuentas de Portal</span>
+            <span className="hidden sm:flex mx-4 font-medium">Credenciales Autopistas</span>
           </Typography>
         </motion.div>
 

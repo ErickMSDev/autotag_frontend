@@ -145,7 +145,7 @@ function PortalAccount(props) {
           to="/portal-accounts"
           color="inherit"
         >
-          Ir a Cuentas de Portales
+          Ir a Credenciales Autopistas
         </Button>
       </motion.div>
     );

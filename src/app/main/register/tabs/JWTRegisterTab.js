@@ -6,6 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import withRouter from '@fuse/core/withRouter';
 import { submitRegister } from 'app/auth/store/registerSlice';
 import * as yup from 'yup';
 import _ from '@lodash';
@@ -38,7 +39,7 @@ function JWTRegisterTab(props) {
   const authRegister = useSelector(({ auth }) => auth.register);
   const [isLoading, setIsLoading] = useState(false);
 
-  const { control, formState, handleSubmit, reset, setError } = useForm({
+  const { control, formState, handleSubmit, reset, setError, getValues } = useForm({
     mode: 'onChange',
     defaultValues,
     resolver: yupResolver(schema),
@@ -54,6 +55,14 @@ function JWTRegisterTab(props) {
       });
     });
   }, [authRegister.errors, setError]);
+
+  useEffect(() => {
+    if (authRegister.success) {
+      props.navigate({
+        pathname: `/mail-confirm/${getValues('email')}`,
+      });
+    }
+  }, [authRegister, getValues, props]);
 
   function onSubmit(model) {
     setIsLoading(true);
@@ -210,4 +219,4 @@ function JWTRegisterTab(props) {
   );
 }
 
-export default JWTRegisterTab;
+export default withRouter(JWTRegisterTab);
