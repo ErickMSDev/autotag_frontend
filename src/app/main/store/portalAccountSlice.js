@@ -5,16 +5,13 @@ export const getPortalAccount = createAsyncThunk('portalAccount/getPortalAccount
   const response = await axios.post(`/api/PortalAccount/Get`, { id });
   const data = await response.data;
 
-  console.log({ data: data === undefined ? null : data });
   return data === undefined ? null : data;
 });
 
 export const removePortalAccount = createAsyncThunk(
   'portalAccount/removePortalAccount',
   async (val, { getState }) => {
-    console.log('Llegó a removePortalAccount');
     const { id } = getState().main.portalAccount;
-    console.log({ removeId: id });
     await axios.post(`/api/PortalAccount/Remove`, { id });
 
     return id;

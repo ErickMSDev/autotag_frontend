@@ -1,5 +1,5 @@
 import TextField from '@mui/material/TextField';
-import Switch from '@mui/material/Switch';
+import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
@@ -18,7 +18,7 @@ function BasicInfoTab(props) {
   const run = watch('run');
 
   useEffect(() => {
-    if (run !== '') {
+    if (run !== '' && run !== undefined) {
       setValue('run', rutFormat(run), { shouldValidate: true });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -26,30 +26,23 @@ function BasicInfoTab(props) {
 
   return (
     <div>
-      <Controller
-        name="portalId"
-        control={control}
-        render={({ field }) => (
-          <>
-            <FormControl className="mt-8 mb-16" fullWidth>
-              <InputLabel id="portal-label">Portal</InputLabel>
-              <Select
-                {...field}
-                labelId="portal-label"
-                id="portal_id"
-                // style={{ minWidth: '18rem' }}
-                label="Portal"
-              >
-                {arrPortals.map((portal) => (
-                  <MenuItem key={portal.id} value={portal.id}>
-                    {portal.name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </>
-        )}
-      />
+      <FormControl className="mt-8 mb-16" fullWidth error={!!errors.portalId}>
+        <InputLabel id="portal-label">Portal</InputLabel>
+        <Controller
+          name="portalId"
+          control={control}
+          render={({ field }) => (
+            <Select {...field} labelId="portal-label" id="portal_id" label="Portal">
+              {arrPortals.map((portal) => (
+                <MenuItem key={portal.id} value={portal.id}>
+                  {portal.name}
+                </MenuItem>
+              ))}
+            </Select>
+          )}
+        />
+        {!!errors.portalId && <FormHelperText error>{errors?.portalId?.message}</FormHelperText>}
+      </FormControl>
       <Controller
         name="run"
         control={control}
@@ -81,19 +74,6 @@ function BasicInfoTab(props) {
             fullWidth
           />
         )}
-      />
-      <Controller
-        name="enabled"
-        control={control}
-        render={({ field }) => {
-          field = { ...field, checked: field.value };
-          return (
-            <>
-              <InputLabel id="portal-label">Habilitado</InputLabel>
-              <Switch {...field} className="mt-8 mb-16" error={!!errors.enabled} />
-            </>
-          );
-        }}
       />
     </div>
   );

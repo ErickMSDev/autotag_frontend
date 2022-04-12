@@ -95,16 +95,6 @@ function PortalAccount(props) {
   }, [dispatch, routeParams]);
 
   useEffect(() => {
-    if (!portalAccount) {
-      return;
-    }
-    /**
-     * Reset the form on product state changes
-     */
-    reset(portalAccount);
-  }, [portalAccount, reset]);
-
-  useEffect(() => {
     return () => {
       /**
        * Reset Product on component unload
@@ -136,7 +126,7 @@ function PortalAccount(props) {
         className="flex flex-col flex-1 items-center justify-center h-full"
       >
         <Typography color="textSecondary" variant="h5">
-          No existe tal cuenta!
+          No se encontraron autopistas!
         </Typography>
         <Button
           className="mt-24"
@@ -156,11 +146,11 @@ function PortalAccount(props) {
    * _.isEmpty(form) ||
    */
   if (
-    _.isEmpty(form) ||
     !arrPortals ||
     (portalAccount &&
       parseInt(routeParams.portalAccountId, 10) !== portalAccount.id &&
-      routeParams.portalAccountId !== 'new')
+      routeParams.portalAccountId !== 'new') ||
+    (_.isEmpty(form) && routeParams.portalAccountId !== 'new')
   ) {
     return <FuseLoading />;
   }

@@ -41,8 +41,6 @@ class FuseAuthorization extends Component {
 
     const matched = matchedRoutes ? matchedRoutes[0] : false;
 
-    console.log({ matched, userRole });
-
     return {
       accessGranted: matched ? FuseUtils.hasPermission(matched.route.auth, userRole) : true,
     };
@@ -86,7 +84,6 @@ class FuseAuthorization extends Component {
 }
 
 function mapStateToProps({ auth }) {
-  console.log({ auth });
   return {
     userRole: auth.user.role,
   };

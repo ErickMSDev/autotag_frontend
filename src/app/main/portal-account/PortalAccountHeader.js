@@ -13,31 +13,40 @@ import { savePortalAccount, removePortalAccount } from '../store/portalAccountSl
 function ProductHeader(props) {
   const dispatch = useDispatch();
   const methods = useFormContext();
-  const { formState, watch, getValues } = methods;
-  const { isValid, dirtyFields, errors } = formState;
+  const { formState, watch, getValues, setError } = methods;
+  const { isValid, dirtyFields } = formState;
   const run = watch('run');
   const theme = useTheme();
   const navigate = useNavigate();
 
   function handleSavePortalAccount() {
     dispatch(savePortalAccount(getValues())).then((action) => {
-      const textMessage = action.payload.enabled
-        ? `Cuenta guardada.
+      if (!action.payload.error) {
+        const textMessage = action.payload.enabled
+          ? `Cuenta guardada.
         Se comenzará a descargar la información.
         Esto puede tomar hasta 15 minutos.
         Te enviaremos un correo cuando el proceso esté listo.`
-        : 'Cuenta guardada';
-      dispatch(
-        showMessage({
-          message: textMessage,
-          autoHideDuration: 100000,
-          anchorOrigin: {
-            vertical: 'top',
-            horizontal: 'center',
-          },
-          variant: 'success',
-        })
-      );
+          : 'Cuenta guardada';
+        dispatch(
+          showMessage({
+            message: textMessage,
+            autoHideDuration: 100000,
+            anchorOrigin: {
+              vertical: 'top',
+              horizontal: 'center',
+            },
+            variant: 'success',
+          })
+        );
+      } else {
+        action.payload.error.forEach((error) => {
+          setError(error.type, {
+            type: 'manual',
+            message: error.message,
+          });
+        });
+      }
     });
   }
 
