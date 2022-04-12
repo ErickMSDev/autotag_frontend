@@ -95,6 +95,16 @@ function PortalAccount(props) {
   }, [dispatch, routeParams]);
 
   useEffect(() => {
+    if (!portalAccount || portalAccount.error) {
+      return;
+    }
+    /**
+     * Reset the form on product state changes
+     */
+    reset(portalAccount);
+  }, [portalAccount, reset]);
+
+  useEffect(() => {
     return () => {
       /**
        * Reset Product on component unload
@@ -146,11 +156,11 @@ function PortalAccount(props) {
    * _.isEmpty(form) ||
    */
   if (
+    _.isEmpty(form) ||
     !arrPortals ||
     (portalAccount &&
       parseInt(routeParams.portalAccountId, 10) !== portalAccount.id &&
-      routeParams.portalAccountId !== 'new') ||
-    (_.isEmpty(form) && routeParams.portalAccountId !== 'new')
+      routeParams.portalAccountId !== 'new')
   ) {
     return <FuseLoading />;
   }

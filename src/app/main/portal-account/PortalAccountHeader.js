@@ -110,6 +110,7 @@ function ProductHeader(props) {
           className="whitespace-nowrap mx-4"
           variant="contained"
           color="secondary"
+          disabled={!getValues('id')}
           onClick={handleRemovePortalAccount}
           startIcon={<Icon className="hidden sm:flex">delete</Icon>}
         >
