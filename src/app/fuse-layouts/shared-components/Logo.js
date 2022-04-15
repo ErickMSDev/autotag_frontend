@@ -19,10 +19,14 @@ const Root = styled('div')(({ theme }) => ({
 function Logo() {
   return (
     <Root className="flex items-center">
-      <img className="logo-icon w-24 h-24" src="assets/images/logos/fuse.svg" alt="logo" />
-      <Typography className="logo-text text-16 leading-none mx-12 font-medium" color="inherit">
+      <img
+        className="logo-icon w-56 h-52"
+        src="assets/images/logos/logo-viasimple-white.svg"
+        alt="logo"
+      />
+      {/* <Typography className="logo-text text-16 leading-none mx-12 font-medium" color="inherit">
         ViaSimple
-      </Typography>
+      </Typography> */}
     </Root>
   );
 }
