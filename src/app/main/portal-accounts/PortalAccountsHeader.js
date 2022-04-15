@@ -72,7 +72,7 @@ function PortalAccountsHeader(props) {
           variant="contained"
           color="secondary"
         >
-          <span className="hidden sm:flex">Agregar nueva cuenta</span>
+          <span className="hidden sm:flex">Agregar nueva credencial</span>
           <span className="flex sm:hidden">Agregar</span>
         </Button>
       </motion.div>
