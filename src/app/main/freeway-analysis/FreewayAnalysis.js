@@ -19,8 +19,8 @@ const Root = styled(FusePageCarded)(({ theme }) => ({
     height: 72,
     alignItems: 'center',
     [theme.breakpoints.up('sm')]: {
-      minHeight: 136,
-      height: 136,
+      minHeight: 116,
+      height: 116,
     },
   },
   '& .FusePageCarded-content': {
@@ -92,8 +92,8 @@ function FreewayAnalysis() {
                 accessToken,
                 tokenType: models.TokenType.Embed,
                 // pageView: 'fitToWidth',
-                height: '700px',
-                width: '1000px',
+                // height: '700px',
+                // width: '1800px',
                 settings: {
                   panes: {
                     filters: {
@@ -107,6 +107,10 @@ function FreewayAnalysis() {
                   },
                   navContentPaneEnabled: false,
                   background: models.BackgroundType.Transparent,
+                  layoutType: models.LayoutType.Custom,
+                  customLayout: {
+                    displayOption: models.DisplayOption.FitToWidth,
+                  },
                 },
               }}
               eventHandlers={

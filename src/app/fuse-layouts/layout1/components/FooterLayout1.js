@@ -18,7 +18,7 @@ function FooterLayout1(props) {
         color="default"
         style={{ backgroundColor: footerTheme.palette.background.paper }}
       >
-        <Toolbar className="min-h-48 md:min-h-64 px-8 sm:px-12 py-0 flex items-center overflow-x-auto">
+        <Toolbar className="min-h-48 md:min-h-44 px-8 sm:px-12 py-0 flex items-center overflow-x-auto">
           <Typography>RandomDev ® 2022</Typography>
         </Toolbar>
       </AppBar>

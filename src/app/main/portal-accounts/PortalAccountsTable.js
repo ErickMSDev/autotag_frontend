@@ -222,8 +222,7 @@ function PortalAccountsTable(props) {
                         className={clsx(
                           'inline text-12 font-semibold py-4 px-12 rounded-full truncate',
                           ['disabled'].includes(n.statusCode) && 'bg-gray text-black',
-                          ['error', 'error_login'].includes(n.statusCode) &&
-                            'bg-red-700 text-white',
+                          n.statusCode.includes('error') && 'bg-red-700 text-white',
                           ['processing'].includes(n.statusCode) && 'bg-orange text-black',
                           ['active'].includes(n.statusCode) && 'bg-green-700 text-white'
                         )}
