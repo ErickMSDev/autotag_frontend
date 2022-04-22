@@ -70,9 +70,10 @@ class FuseAuthorization extends Component {
         User must be on unAuthorized page or just logged in
         Redirect to dashboard or loginRedirectUrl
         */
-      navigate({
-        pathname: loginRedirectUrl,
-      });
+      window.location.href = loginRedirectUrl;
+      // navigate({
+      //   pathname: loginRedirectUrl,
+      // });
       settingsConfig.loginRedirectUrl = this.defaultLoginRedirectUrl;
     }
   }

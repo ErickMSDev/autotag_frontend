@@ -11,8 +11,8 @@ const Root = styled(FusePageCarded)(({ theme }) => ({
     height: 72,
     alignItems: 'center',
     [theme.breakpoints.up('sm')]: {
-      minHeight: 116,
-      height: 116,
+      minHeight: 68,
+      height: 68,
     },
   },
   '& .FusePageCarded-content': {
