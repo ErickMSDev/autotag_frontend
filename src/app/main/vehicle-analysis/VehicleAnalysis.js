@@ -49,12 +49,12 @@ function VehicleAnalysis() {
   const accessToken = embedInfo.embedToken.token;
   const { embedUrl, reportId } = embedInfo.embedReport[0];
 
-  console.log({ loading });
-  console.log({ embedInfo });
-  console.log({ report });
-  console.log({ accessToken });
-  console.log({ embedUrl });
-  console.log({ reportId });
+  // console.log({ loading });
+  // console.log({ embedInfo });
+  // console.log({ report });
+  // console.log({ accessToken });
+  // console.log({ embedUrl });
+  // console.log({ reportId });
 
   return (
     <Root
@@ -91,9 +91,6 @@ function VehicleAnalysis() {
                 embedUrl,
                 accessToken,
                 tokenType: models.TokenType.Embed,
-                // pageView: 'fitToWidth',
-                height: '700px',
-                width: '1000px',
                 settings: {
                   panes: {
                     filters: {
@@ -107,6 +104,10 @@ function VehicleAnalysis() {
                   },
                   navContentPaneEnabled: false,
                   background: models.BackgroundType.Transparent,
+                  layoutType: models.LayoutType.Custom,
+                  customLayout: {
+                    displayOption: models.DisplayOption.FitToWidth,
+                  },
                 },
               }}
               eventHandlers={
