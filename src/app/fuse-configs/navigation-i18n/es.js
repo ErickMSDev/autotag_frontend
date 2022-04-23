@@ -3,7 +3,7 @@ const locale = {
   EXAMPLE: 'Ejemplo',
   FREEWAY_ANALYSIS: 'Análisis de Autopistas',
   VEHICLE_ANALYSIS: 'Análisis de Vehículos',
-  DOCUMENT_LIST: 'Lista de documentos',
+  DOCUMENT_LIST: 'Facturas de Autopistas',
   DASHBOARD: 'Dashboard',
   PORTAL_ACCOUNTS: 'Credenciales Autopistas',
   LAST_MOVEMENTS: 'Últimos movimientos',
