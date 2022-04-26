@@ -7,7 +7,7 @@ const VehicleAnalysisConfig = {
       config: {},
     },
   },
-  auth: authRoles.user,
+  auth: authRoles.demo,
   routes: [
     {
       path: 'vehicle-analysis',

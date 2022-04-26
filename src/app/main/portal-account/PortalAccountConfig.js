@@ -7,7 +7,7 @@ const PortalAccountConfig = {
       config: {},
     },
   },
-  auth: authRoles.user,
+  auth: authRoles.demo,
   routes: [
     {
       path: 'portal-accounts/:portalAccountId/*',

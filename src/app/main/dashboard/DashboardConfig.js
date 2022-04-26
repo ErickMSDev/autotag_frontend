@@ -7,7 +7,7 @@ const DashboardConfig = {
       config: {},
     },
   },
-  auth: authRoles.user,
+  auth: authRoles.demo,
   routes: [
     {
       path: 'dashboard',

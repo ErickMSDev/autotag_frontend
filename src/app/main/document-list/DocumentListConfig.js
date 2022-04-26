@@ -7,7 +7,7 @@ const DocumentListConfig = {
       config: {},
     },
   },
-  auth: authRoles.user,
+  auth: authRoles.demo,
   routes: [
     {
       path: 'document-list',

@@ -7,7 +7,7 @@ const TransitsConfig = {
       config: {},
     },
   },
-  auth: authRoles.user,
+  auth: authRoles.demo,
   routes: [
     {
       path: 'transits',

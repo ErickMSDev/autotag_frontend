@@ -7,7 +7,7 @@ const FreewayAnalysisConfig = {
       config: {},
     },
   },
-  auth: authRoles.user,
+  auth: authRoles.demo,
   routes: [
     {
       path: 'freeway-analysis',
