@@ -11,7 +11,6 @@ import clsx from 'clsx';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToolbarTheme } from 'app/store/fuse/settingsSlice';
-import AdSense from 'react-adsense';
 // import AdjustFontSize from '../../shared-components/AdjustFontSize';
 // import FullScreenToggle from '../../shared-components/FullScreenToggle';
 // import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
@@ -32,13 +31,6 @@ function ToolbarLayout1(props) {
       >
         <Toolbar className="p-0 min-h-48 md:min-h-64">
           <div className="flex flex-1 px-16">
-            <AdSense.Google
-              client="ca-pub-5487501356092327"
-              slot="1820384914"
-              style={{ display: 'block' }}
-              format="fluid"
-              layoutKey="-in-v+35-g-4x"
-            />
             {config.navbar.display && config.navbar.position === 'left' && (
               <>
                 <Hidden lgDown>
