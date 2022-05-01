@@ -1,21 +1,22 @@
 import Button from '@mui/material/Button';
 import Icon from '@mui/material/Icon';
+import { Link } from 'react-router-dom';
+import Hidden from '@mui/material/Hidden';
 import clsx from 'clsx';
 
 function PurchaseButton({ className }) {
   return (
     <Button
-      component="a"
-      href="https://1.envato.market/zDGL6"
-      target="_blank"
-      rel="noreferrer noopener"
-      role="button"
+      component={Link}
+      to="/purchase"
       className={clsx('', className)}
       variant="contained"
-      color="secondary"
+      color="success"
     >
-      <Icon className="text-16">shopping_cart</Icon>
-      <span className="mx-4">Purchase FUSE React</span>
+      <Hidden lgDown>
+        <Icon className="text-16">shopping_cart</Icon>
+      </Hidden>
+      <span className="lg:mx-4">Comprar ViaSimple</span>
     </Button>
   );
 }

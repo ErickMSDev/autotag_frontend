@@ -14,6 +14,7 @@ import LoginConfig from 'app/main/login/LoginConfig';
 import RegisterConfig from 'app/main/register/RegisterConfig';
 import ConfirmEmailConfig from 'app/main/confirm-email/ConfirmEmailConfig';
 import MailConfirmConfig from 'app/main/mail-confirm/MailConfirmConfig';
+import PurchaseConfig from 'app/main/purchase/PurchaseConfig';
 
 const routeConfigs = [
   ExampleConfig,
@@ -28,6 +29,7 @@ const routeConfigs = [
   RegisterConfig,
   ConfirmEmailConfig,
   MailConfirmConfig,
+  PurchaseConfig,
 ];
 
 const routes = [

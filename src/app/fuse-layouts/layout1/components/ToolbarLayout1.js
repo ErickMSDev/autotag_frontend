@@ -11,6 +11,7 @@ import clsx from 'clsx';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectToolbarTheme } from 'app/store/fuse/settingsSlice';
+import PurchaseButton from 'app/fuse-layouts/shared-components/PurchaseButton';
 // import AdjustFontSize from '../../shared-components/AdjustFontSize';
 // import FullScreenToggle from '../../shared-components/FullScreenToggle';
 // import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
@@ -49,7 +50,7 @@ function ToolbarLayout1(props) {
                 </Hidden>
               </>
             )}
-
+            <PurchaseButton />
             {/* <Hidden lgDown>
               <FuseShortcuts />
             </Hidden> */}
@@ -65,7 +66,6 @@ function ToolbarLayout1(props) {
             {/* <FuseSearch /> */}
 
             {/* <QuickPanelToggleButton /> */}
-
             <UserMenu />
           </div>
 
