@@ -100,7 +100,7 @@ function Purchase() {
                     PERSONA
                   </Typography>
                   <Typography variant="caption" color="inherit" className="font-normal">
-                    Por inauguración! (Después $3.000)
+                    Por inauguración! (Después $5.000)
                   </Typography>
                 </div>
 
@@ -111,7 +111,7 @@ function Purchase() {
                     </Typography>
                     <div className="flex items-end">
                       <Typography className="text-52 mx-4 tracking-tight font-semibold leading-none">
-                        2.000
+                        3.000
                       </Typography>
                       <Typography variant="subtitle1" color="textSecondary" className="font-normal">
                         / mes
@@ -157,7 +157,7 @@ function Purchase() {
                     PYME
                   </Typography>
                   <Typography variant="caption" color="inherit" className="font-normal">
-                    Por inauguración! (Después $15.000)
+                    Por inauguración! (Después $20.000)
                   </Typography>
                 </div>
 
@@ -168,7 +168,7 @@ function Purchase() {
                     </Typography>
                     <div className="flex items-end">
                       <Typography className="text-52 mx-4 tracking-tight font-semibold leading-none">
-                        12.000
+                        15.000
                       </Typography>
                       <Typography variant="subtitle1" color="textSecondary" className="font-normal">
                         / mes
