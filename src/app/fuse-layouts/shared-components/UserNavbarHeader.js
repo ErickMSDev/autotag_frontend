@@ -28,6 +28,8 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 function UserNavbarHeader(props) {
   const user = useSelector(({ auth }) => auth.user);
 
+  console.log({ user });
+
   return (
     <StyledAppBar
       position="static"

@@ -17,6 +17,7 @@ import PurchaseButton from 'app/fuse-layouts/shared-components/PurchaseButton';
 // import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
 
 function ToolbarLayout1(props) {
+  const user = useSelector(({ auth }) => auth.user);
   const config = useSelector(({ fuse }) => fuse.settings.current.layout.config);
   const navbar = useSelector(({ fuse }) => fuse.navbar);
   const toolbarTheme = useSelector(selectToolbarTheme);
@@ -50,7 +51,7 @@ function ToolbarLayout1(props) {
                 </Hidden>
               </>
             )}
-            <PurchaseButton />
+            {user.role === 'demo' && <PurchaseButton />}
             {/* <Hidden lgDown>
               <FuseShortcuts />
             </Hidden> */}
