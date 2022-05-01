@@ -2,14 +2,10 @@ import FuseLoading from '@fuse/core/FuseLoading';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
-import jwtService from 'app/services/jwtService';
-import { bindActionCreators } from '@reduxjs/toolkit';
-import { setUserData } from '../../auth/store/userSlice';
-
 
 function ConfirmEmail() {
   const routeParams = useParams();
+
   useEffect(() => {
     const { token } = routeParams;
 
@@ -54,13 +50,4 @@ function ConfirmEmail() {
   return <FuseLoading />;
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      setUserData,
-    },
-    dispatch
-  );
-}
-
-export default connect(null, mapDispatchToProps)(ConfirmEmail);
+export default ConfirmEmail;

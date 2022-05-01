@@ -15,7 +15,7 @@ import RegisterConfig from 'app/main/register/RegisterConfig';
 import ConfirmEmailConfig from 'app/main/confirm-email/ConfirmEmailConfig';
 import MailConfirmConfig from 'app/main/mail-confirm/MailConfirmConfig';
 import PurchaseConfig from 'app/main/purchase/PurchaseConfig';
-import PurchaseReturn from 'app/main/purchase-return/PurchaseReturn';
+import PurchaseReturnConfig from 'app/main/purchase-return/PurchaseReturnConfig';
 
 const routeConfigs = [
   ExampleConfig,
@@ -31,7 +31,7 @@ const routeConfigs = [
   ConfirmEmailConfig,
   MailConfirmConfig,
   PurchaseConfig,
-  PurchaseReturn,
+  PurchaseReturnConfig,
 ];
 
 const routes = [
