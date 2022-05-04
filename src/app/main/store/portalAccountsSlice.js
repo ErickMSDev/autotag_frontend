@@ -39,8 +39,8 @@ const portalAccountsSlice = createSlice({
       })
       .addCase(removePortalAccounts.fulfilled, (state, action) => {
         const currentState = current(state);
-        state.arrPortalAccounts = currentState.arrPortalAccounts.filter((p) =>
-          action.payload.includes(p.id)
+        state.arrPortalAccounts = currentState.arrPortalAccounts.filter(
+          (p) => !action.payload.includes(p.id)
         );
       });
   },
