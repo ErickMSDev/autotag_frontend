@@ -7,6 +7,7 @@ import transits from './transitsSlice';
 import freewayAnalysis from './freewayAnalysisSlice';
 import vehicleAnalysis from './vehicleAnalysisSlice';
 import documentList from './documentListSlice';
+import vehicleRanking from './vehicleRankingSlice';
 
 const reducer = combineReducers({
   portalAccounts,
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   freewayAnalysis,
   vehicleAnalysis,
   documentList,
+  vehicleRanking,
 });
 
 export default reducer;

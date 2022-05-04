@@ -16,6 +16,7 @@ import ConfirmEmailConfig from 'app/main/confirm-email/ConfirmEmailConfig';
 import MailConfirmConfig from 'app/main/mail-confirm/MailConfirmConfig';
 import PurchaseConfig from 'app/main/purchase/PurchaseConfig';
 import PurchaseReturnConfig from 'app/main/purchase-return/PurchaseReturnConfig';
+import VehicleRankingConfig from 'app/main/vehicle-ranking/VehicleRankingConfig';
 
 const routeConfigs = [
   ExampleConfig,
@@ -32,6 +33,7 @@ const routeConfigs = [
   MailConfirmConfig,
   PurchaseConfig,
   PurchaseReturnConfig,
+  VehicleRankingConfig,
 ];
 
 const routes = [

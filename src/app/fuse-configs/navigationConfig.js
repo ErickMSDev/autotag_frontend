@@ -65,6 +65,14 @@ const navigationConfig = [
         icon: 'whatshot',
         url: 'transits',
       },
+      {
+        id: 'vehicle-ranking',
+        title: 'VehicleRanking',
+        translate: 'VEHICLE_RANKING',
+        type: 'item',
+        icon: 'whatshot',
+        url: 'vehicle-ranking',
+      },
       // {
       //   id: 'irregularities-component',
       //   title: 'Irregularities',

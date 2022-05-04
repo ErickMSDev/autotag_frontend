@@ -10,6 +10,7 @@ const locale = {
   TRANSITS: 'Transitos',
   IRREGULARITIES: 'Irregularidades - pronto!',
   EXCESS_SPEED: 'Excesos de velocidad - pronto!',
+  VEHICLE_RANKING: 'Ranking de Vehículos',
 };
 
 export default locale;
