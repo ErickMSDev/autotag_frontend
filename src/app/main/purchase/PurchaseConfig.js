@@ -1,4 +1,4 @@
-import { authRoles } from 'app/auth';
+import authRoles from '../../auth/authRoles';
 import { lazy } from 'react';
 
 const Purchase = lazy(() => import('./Purchase'));
