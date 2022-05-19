@@ -1,10 +1,14 @@
-import { authRoles } from 'app/auth';
+import authRoles from '../../auth/authRoles';
 import PortalAccount from './PortalAccount';
 
 const PortalAccountConfig = {
   settings: {
     layout: {
-      config: {},
+      config: {
+        footer: {
+          display: false,
+        },
+      },
     },
   },
   auth: authRoles.demo,

@@ -129,7 +129,7 @@ function PortalAccountsTable(props) {
   }
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col min-h-full">
       <FuseScrollbars className="grow overflow-x-auto">
         <Table stickyHeader className="min-w-xl" aria-labelledby="tableTitle">
           <PortalAccountsTableHead
@@ -163,7 +163,7 @@ function PortalAccountsTable(props) {
                 const isSelected = selected.indexOf(n.id) !== -1;
                 return (
                   <TableRow
-                    className="h-72 cursor-pointer"
+                    className="h-40 cursor-pointer"
                     hover
                     role="checkbox"
                     aria-checked={isSelected}
@@ -201,23 +201,23 @@ function PortalAccountsTable(props) {
                       )}
                     </TableCell> */}
 
-                    <TableCell className="p-4 md:p-16" component="th" scope="row">
+                    <TableCell className="p-4 md:p-8" scope="row">
                       {n.id}
                     </TableCell>
 
-                    <TableCell className="p-4 md:p-16" component="th" scope="row">
+                    <TableCell className="p-4 md:p-8" scope="row">
                       {n.portalName}
                     </TableCell>
 
-                    <TableCell className="p-4 md:p-16" component="th" scope="row">
+                    <TableCell className="p-4 md:p-8" scope="row">
                       {n.run}
                     </TableCell>
 
-                    <TableCell className="p-4 md:p-16" component="th" scope="row">
+                    <TableCell className="p-4 md:p-8" scope="row">
                       <HideValue>{n.password}</HideValue>
                     </TableCell>
 
-                    <TableCell className="p-4 md:p-16" component="th" scope="row">
+                    <TableCell className="p-4 md:p-8" scope="row">
                       <div
                         className={clsx(
                           'inline text-12 font-semibold py-4 px-12 rounded-full truncate',

@@ -1,4 +1,4 @@
-import { authRoles } from 'app/auth';
+import authRoles from '../../auth/authRoles';
 import ConfirmEmail from './ConfirmEmail';
 
 const ConfirmEmailConfig = {

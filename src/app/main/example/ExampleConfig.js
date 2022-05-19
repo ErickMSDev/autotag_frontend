@@ -1,20 +1,23 @@
-import { authRoles } from 'app/auth';
 import i18next from 'i18next';
-import Example from './Example';
+import authRoles from '../../auth/authRoles';
+
 import en from './i18n/en';
 import tr from './i18n/tr';
 import ar from './i18n/ar';
-import es from './i18n/es';
+import Example from './Example';
 
 i18next.addResourceBundle('en', 'examplePage', en);
 i18next.addResourceBundle('tr', 'examplePage', tr);
 i18next.addResourceBundle('ar', 'examplePage', ar);
-i18next.addResourceBundle('es', 'examplePage', es);
 
 const ExampleConfig = {
   settings: {
     layout: {
-      config: {},
+      config: {
+        footer: {
+          display: false,
+        },
+      },
     },
   },
   auth: authRoles.demo,
@@ -33,22 +36,22 @@ export default ExampleConfig;
  */
 /*
 import React from 'react';
-const Example = React.lazy(() => import('./Example'));
+
+const Example = lazy(() => import('./Example'));
 
 const ExampleConfig = {
-    settings: {
-        layout: {
-            config: {}
-        }
+  settings: {
+    layout: {
+      config: {},
     },
-    routes  : [
-        {
-            path     : 'example',
-            element: <Example/>
-        }
-    ]
+  },
+  routes: [
+    {
+      path: 'example',
+      element: <Example />,
+    },
+  ],
 };
 
 export default ExampleConfig;
-
 */

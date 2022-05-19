@@ -34,7 +34,7 @@ function MailConfirm() {
               </Typography>
 
               <div className="flex flex-col items-center justify-center pt-32 pb-24">
-                <Link className="font-normal" to="/login">
+                <Link className="font-normal" to="/sign-in">
                   Volver a iniciar sesión
                 </Link>
               </div>

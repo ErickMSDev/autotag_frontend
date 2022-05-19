@@ -2,14 +2,19 @@ import FuseLoading from '@fuse/core/FuseLoading';
 import { useDeepCompareEffect } from '@fuse/hooks';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { confirmEmail } from 'app/auth/store/registerSlice';
+import jwtService from '../../auth/services/jwtService';
 
 function ConfirmEmail() {
   const dispatch = useDispatch();
   const routeParams = useParams();
   useDeepCompareEffect(() => {
     const { token } = routeParams;
-    dispatch(confirmEmail({ token }));
+    jwtService
+      .confirmEmail({ token })
+      .then((user) => {})
+      .catch((_errors) => {
+        console.error(_errors);
+      });
   }, [dispatch, routeParams]);
   return <FuseLoading />;
 }

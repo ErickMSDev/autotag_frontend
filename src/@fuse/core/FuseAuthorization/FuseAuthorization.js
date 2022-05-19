@@ -1,10 +1,11 @@
 import FuseUtils from '@fuse/utils';
 import AppContext from 'app/AppContext';
 import { Component } from 'react';
-import { connect } from 'react-redux';
 import { matchRoutes } from 'react-router-dom';
 import withRouter from '@fuse/core/withRouter';
-import settingsConfig from 'app/fuse-configs/settingsConfig';
+import history from '@history';
+
+let loginRedirectUrl = null;
 
 class FuseAuthorization extends Component {
   constructor(props, context) {
@@ -14,7 +15,7 @@ class FuseAuthorization extends Component {
       accessGranted: true,
       routes,
     };
-    this.defaultLoginRedirectUrl = settingsConfig.loginRedirectUrl || '/';
+    this.defaultLoginRedirectUrl = props.loginRedirectUrl || '/';
   }
 
   componentDidMount() {
@@ -40,41 +41,31 @@ class FuseAuthorization extends Component {
     const matchedRoutes = matchRoutes(state.routes, pathname);
 
     const matched = matchedRoutes ? matchedRoutes[0] : false;
-
     return {
       accessGranted: matched ? FuseUtils.hasPermission(matched.route.auth, userRole) : true,
     };
   }
 
   redirectRoute() {
-    const { location, userRole, navigate } = this.props;
+    const { location, userRole } = this.props;
     const { pathname } = location;
-    const loginRedirectUrl = settingsConfig.loginRedirectUrl
-      ? settingsConfig.loginRedirectUrl
-      : this.defaultLoginRedirectUrl;
+    const redirectUrl = loginRedirectUrl || this.defaultLoginRedirectUrl;
 
     /*
         User is guest
         Redirect to Login Page
         */
     if (!userRole || userRole.length === 0) {
-      window.location.href = 'login';
-      // no funciona
-      // navigate({
-      //   pathname: '/login',
-      // });
-      // settingsConfig.loginRedirectUrl = pathname;
+      setTimeout(() => history.push('/sign-in'), 0);
+      loginRedirectUrl = pathname;
     } else {
       /*
         User is member
         User must be on unAuthorized page or just logged in
         Redirect to dashboard or loginRedirectUrl
         */
-      window.location.href = loginRedirectUrl;
-      // navigate({
-      //   pathname: loginRedirectUrl,
-      // });
-      settingsConfig.loginRedirectUrl = this.defaultLoginRedirectUrl;
+      setTimeout(() => history.push(redirectUrl), 0);
+      loginRedirectUrl = this.defaultLoginRedirectUrl;
     }
   }
 
@@ -84,12 +75,6 @@ class FuseAuthorization extends Component {
   }
 }
 
-function mapStateToProps({ auth }) {
-  return {
-    userRole: auth.user.role,
-  };
-}
-
 FuseAuthorization.contextType = AppContext;
 
-export default withRouter(connect(mapStateToProps)(FuseAuthorization));
+export default withRouter(FuseAuthorization);
