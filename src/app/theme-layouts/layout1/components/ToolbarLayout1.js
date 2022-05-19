@@ -54,7 +54,7 @@ function ToolbarLayout1(props) {
               </>
             )}
 
-            {user.role === 'user' && <PurchaseButton />}
+            {user.role === 'demo' && <PurchaseButton />}
             {/* <Hidden lgDown>
               <FuseShortcuts />
             </Hidden> */}

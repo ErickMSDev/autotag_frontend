@@ -13,6 +13,8 @@ import ForgotPasswordEmailConfig from '../main/forgot-password-email/ForgotPassw
 import NewPasswordConfig from '../main/new-password/NewPasswordConfig';
 import PortalAccountsConfig from '../main/portal-accounts/PortalAccountsConfig';
 import PortalAccountConfig from '../main/portal-account/PortalAccountConfig';
+import PurchaseConfig from '../main/purchase/PurchaseConfig';
+import PurchaseReturnConfig from '../main/purchase-return/PurchaseReturnConfig';
 import PowerBIReportConfig from '../main/powerbi-report/PowerBIReportConfig';
 
 const routeConfigs = [
@@ -26,6 +28,8 @@ const routeConfigs = [
   NewPasswordConfig,
   PortalAccountsConfig,
   PortalAccountConfig,
+  PurchaseConfig,
+  PurchaseReturnConfig,
   PowerBIReportConfig,
 ];
 
